@@ -9,7 +9,20 @@ const App = () => {
   const handleAllAccordions = () => {
     setIsChecked(!isChecked);
   };
-  
+
+  const htmlContent1 = `
+    <p>This is <strong>HTML</strong> content with a <a href="#">link</a>.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+  `;
+
+  const htmlContent2 = `
+    <p>Another block of HTML content with <em>emphasized</em> text.</p>
+    <div><img src="https://via.placeholder.com/150" alt="Placeholder Image" /></div>
+  `;
+
   return (
     <div className="App">
       <span>
@@ -18,11 +31,11 @@ const App = () => {
           {isChecked ? "Close All" : "Open All"}
         </label>
       </span>
-      {data.map((card, index) => (
+      {[data[0], data[1]].map((card, index) => (
         <Accordion
           key={index}
           title={card.title}
-          content={card.content}
+          content={htmlContent2}
           isChecked={isChecked}
         />
       ))}
