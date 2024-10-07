@@ -22,7 +22,10 @@ const Accordion = ({ title, content, isChecked }) => {
       {isOpen && (
         <>
           <hr />
-          <div className="accordion-inner-part">{content}</div>
+          <div
+            className="accordion-inner-part"
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></div>
         </>
       )}
     </div>
